@@ -6,7 +6,7 @@ var routes=require('./routes/routes')
 var bodyParser = require('body-parser')
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: true }))
-const PORT = process.env.PORT || config.port
+const PORT = process.env.port || config.port
 
 
 mongoose.connect(config.mongo,(err,data)=>{

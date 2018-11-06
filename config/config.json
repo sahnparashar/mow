@@ -1,0 +1,5 @@
+{
+
+    "port":6363,
+    "mongo":"mongodb://kalilover526:Admin1@ds145921.mlab.com:45921/mow"
+}

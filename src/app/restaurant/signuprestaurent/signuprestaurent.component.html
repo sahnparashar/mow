@@ -1,0 +1,53 @@
+<div class="container pt-5">
+  <div  class="row justify-content-center">
+    <div class="col-md-4">
+        <div class="justify-content-center" ><h1>Restaurent Signup</h1></div><br>
+      <form #restaurentsignupForm="ngForm" (ngSubmit)="signup(restaurentsignupForm.value)">
+        <div class="form-group">
+          <input type="text" name="name" placeholder="Enter Owner Name" #name="ngModel" ngModel class="form-control" required>
+        </div>
+        <div class="form-group">
+          <input type="email" placeholder="Enter email address" name="email" #email="ngModel" ngModel class="form-control" required>
+        </div>
+        <div class="form-group">
+          <input type="text" name="rest_name" #rest_name="ngModel" ngModel placeholder="Enter Restaurent Name" class="form-control" required>
+        </div>
+        <div class="form-group">
+          <input type="number" placeholder="Enter phone number" #phone="ngModel" ngModel name="phone" class="form-control" required>
+        </div>
+        <div class="form-group">
+          <input type="password" placeholder="Enter password" #password="ngModel" ngModel name="password" class="form-control" required>
+        </div>
+        <div class="form-group">
+          <input type="text" placeholder="Enter street" #street="ngModel" ngModel name="street" class="form-control" required>
+        </div>
+        <div class="form-group">
+          <input type="text" placeholder="Enter lane" #lane="ngModel" ngModel name="lane" class="form-control" required>
+        </div>
+        <div class="form-group">
+          <input type="text" placeholder="Enter landmark" #landmark="ngModel" ngModel name="landmark" class="form-control">
+        </div>
+        <div class="form-group">
+          <input type="text" placeholder="Enter city" #city="ngModel" ngModel name="city" class="form-control" required>
+        </div>
+        <div class="form-group">
+          <input type="number" placeholder="Enter pincode" maxlength="6" minlength="6" #pincode="ngModel" ngModel name="pincode" class="form-control" required>
+        </div>
+        <div class="form-group">
+          <input type="number" name="openingHour" #openingHour="ngModel" ngModel required class="custom-form-control" placeholder="Enter restaurant opening hour" >
+          <input type="number" name="openingMinute" #openingMinute="ngModel" ngModel required class="custom-form-control" placeholder="Enter restaurant opening minute" >
+        </div>
+        <div class="form-group">
+          <input type="number" name="closingHour" #opningHour="ngModel" ngModel required class="custom-form-control" placeholder="Enter restarant closing hour" >
+          <input type="number" name="closingMinute" #opningMinute="ngModel" ngModel required class="custom-form-control" placeholder="Enter restaurant closing minute" >
+        </div>
+        <div class="form-group">
+          <input type="text" name="website" #website="ngModel" ngModel  class="form-control" placeholder="Enter restaurant website" >
+        </div>
+        <div class="form-group text-center">
+          <button type="submit" class="btn btn-success">Sign Up</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

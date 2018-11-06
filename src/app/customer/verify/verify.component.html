@@ -1,0 +1,35 @@
+<div class="container pt-5">
+    <div class="row justify-content-center">
+      <div class="col-md-4">
+          <div class="alert alert-info">
+              <strong>Please verify your Token Which is sent to your mail</strong> 
+                </div>
+        <form #verifytoken="ngForm" (ngSubmit)="verify(verifytoken.value)" >
+          <div class="form-group">
+            <input type="text" name="token" #token="ngModel" ngModel required class="form-control">
+          </div>
+          
+          <div class="form-group text-center">
+            <button type="submit" class="btn btn-success">verify</button>
+          </div>
+        </form>
+        
+        <div *ngIf="!dd; else notalert" >
+          </div>
+          <ng-template #notalert>
+       
+              <div class="alert alert-info">
+               <strong>{{dd}}</strong> 
+                 </div> 
+                 </ng-template>
+        <div *ngIf="flag==true;">
+            <div class="alert alert-info">
+                <strong><button routerLinkActive="btn-outline-primary" class="btn mx-1" routerLink="/customer/login">Your account is successfully verified.Click here to login</button></strong> 
+                  </div> 
+                  
+        </div>
+        
+
+   </div>
+    </div>
+</div>  

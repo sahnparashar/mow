@@ -1,0 +1,16 @@
+<div class="container pt-5">
+  <div class="row justify-content-center">
+    <div class="col-md-4">
+      <p *ngIf="flag then show">  
+      </p>
+      <ng-template #show>
+          <div class="col-md-8" *ngFor="let temp of obj">
+              {{temp.category}}-->
+              <p *ngFor="let haha of temp.item">
+                {{haha}},
+              </p>----------------------------------------
+            </div>
+      </ng-template>
+    </div>
+  </div>
+</div>

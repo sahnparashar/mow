@@ -1,0 +1,18 @@
+<div class="container pt-5">
+  <div class="row justify-content-center">
+    <div class="col-md-4">
+      <div class="justify-content-center" ><h1>Restaurent Login</h1></div><br>
+      <form #loginCustomerForm="ngForm" (ngSubmit)="login(loginCustomerForm.value)" >
+        <div class="form-group">
+          <input type="email" name="email" #email="ngModel" ngModel required class="form-control">
+        </div>
+        <div class="form-group">
+          <input type="password" #password="ngModel" ngModel name="password" class="form-control">
+        </div>
+        <div class="form-group text-center">
+          <button type="submit" class="btn btn-success">Login</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

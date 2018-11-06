@@ -1,0 +1,105 @@
+<button (click)="switchcondition = 'category'">Restaurants</button>
+<!-- for old, see desktop -->
+<input type="text" [(ngModel)]="switchcondition">
+<input type="text" [(ngModel)]="switchcondition1">
+<span *ngIf="cart;then withcart;else withoutcart"></span>
+<ng-template #withcart>
+  <div class="row">
+    <div class="col-md-9 bg-primary">
+      <span [ngSwitch]="switchcondition">
+        <button type="button" (click)="revert()">revert</button>
+        <!-- restaurent data template -->
+        <div class="container" *ngSwitchDefault>
+          <div class="row pt-2">
+            <h3>Restaurants</h3>
+            <br>
+            <div class="col-md-3 p-1" *ngFor="let id of ids;let i=index">
+              <button class="btn btn-danger" type="button" (click)="getcat(id)">{{names[i]}}</button>
+
+              <!-- <button class="btn btn-danger" type="button" (click)="showid(id)" >{{names[i]}}</button> -->
+            </div>
+          </div>
+        </div>
+
+        <!-- category template -->
+        <div class="container" *ngSwitchCase="'category'">
+          <div class="row justify">
+            <div class="col-md-4 p-2" *ngFor="let cat of cats;let i=index">
+              <button class="btn btn-danger" type="button" (click)="getitem(cat._id)">{{cat.catname}}</button>
+              <!-- <button class="btn btn-danger" type="button" (click)="showid(cat._id)" >{{cat.catname}}</button> -->
+            </div>
+          </div>
+        </div>
+
+        <!-- item container -->
+        <div class="container" *ngSwitchCase="'item'">
+          <div class="row justify">
+            {{items.catname}}
+            <div class="col-md-4 p-2" (click)="addtocart(items.item[i],items.price[i])" *ngFor="let item of items.item;let i=index">
+              <img src="{{items.image[i]}}" height="50%" width="80%" alt="{{items.item[i]}}">
+              <br>
+              <!-- {{items.item[i]}}<br>₹ {{items.price[i]}}<br>Varriant: {{items.varriant[i]}} -->
+            </div>
+          </div>
+        </div>
+      </span>
+    </div>
+    <div class="col-md-3" *ngIf="cart">
+      <div class="container">
+        <div class="border">
+          <b>Items</b>
+          <span *ngFor="let item of itemnameArray;let i = index">
+            {{itemnameArray[i]}},
+          </span>
+          <br>
+          <b>Total:</b>
+          <span >
+              ₹ {{totalPrice}}
+          </span>
+          <br>
+          <button class="btn btn-danger" (click)="clearCart()">Clear Cart</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</ng-template>
+
+<ng-template #withoutcart>
+  <span [ngSwitch]="switchcondition">
+    <button type="button" (click)="revert()">revert</button>
+    <!-- restaurent data template -->
+    <div class="container" *ngSwitchDefault>
+      <div class="row pt-2">
+        <h3>Restaurants</h3>
+        <br>
+        <div class="col-md-3 p-1" *ngFor="let id of ids;let i=index">
+          <button class="btn btn-danger" type="button" (click)="getcat(id)">{{names[i]}}</button>
+
+          <!-- <button class="btn btn-danger" type="button" (click)="showid(id)" >{{names[i]}}</button> -->
+        </div>
+      </div>
+    </div>
+
+    <!-- category template -->
+    <div class="container" *ngSwitchCase="'category'">
+      <div class="row justify">
+        <div class="col-md-4 p-2" *ngFor="let cat of cats;let i=index">
+          <button class="btn btn-danger" type="button" (click)="getitem(cat._id)">{{cat.catname}}</button>
+          <!-- <button class="btn btn-danger" type="button" (click)="showid(cat._id)" >{{cat.catname}}</button> -->
+        </div>
+      </div>
+    </div>
+
+    <!-- item container -->
+    <div class="container" *ngSwitchCase="'item'">
+      <div class="row justify">
+        {{items.catname}}
+        <div class="col-md-4 p-2" (click)="addtocart(items.item[i],items.price[i])" *ngFor="let item of items.item;let i=index">
+          <img src="{{items.image[i]}}" height="50%" width="80%" alt="{{items.item[i]}}">
+          <br>
+          <!-- {{items.item[i]}}<br>₹ {{items.price[i]}}<br>Varriant: {{items.varriant[i]}} -->
+        </div>
+      </div>
+    </div>
+  </span>
+</ng-template>

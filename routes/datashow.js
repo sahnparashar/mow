@@ -15,7 +15,8 @@ exports.finditem=(req ,res)=>{
             data:data,
         
         })
-    }
+    } 
+    // asdf
 })
 }
 exports.findcategory=(req,res)=>{

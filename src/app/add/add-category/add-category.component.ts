@@ -9,7 +9,7 @@ export class AddCategoryComponent implements OnInit {
 
   constructor(private http:HttpClient) { }
   addcat(temp){
-    this.http.post("http://localhost:6363/user/insertcategory",{
+    this.http.post(" /user/insertcategory",{
       category:temp.category
     }).subscribe((res:any)=>{
       if(res.msg=="Item already insterted")

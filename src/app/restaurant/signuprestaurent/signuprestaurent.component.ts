@@ -13,7 +13,7 @@ export class SignuprestaurentComponent implements OnInit {
     this.openingTime=(data.openingHour*100)+data.openingMinute
     this.closingTime=(data.closingHour*100)+data.closingMinute
     console.log(this.openingTime,"-----",this.closingTime)
-    this.http.post("http://localhost:6363/user/restsign",{
+    this.http.post(" /user/restsign",{
     name:data.name,
     email:data.email,
     phone:data.phone,

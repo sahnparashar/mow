@@ -30,7 +30,7 @@ export class DashComponent implements OnInit {
 
 
 
-    this.http.post("http://localhost:6363/user/username",{
+    this.http.post(" /user/username",{
       token: sessionStorage.getItem('token')
     }).subscribe((res:any)=>{
           if(res.msg == "error")

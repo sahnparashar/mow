@@ -10,7 +10,7 @@ export class FetchcatComponent implements OnInit {
   temp;tempcat;cats=[];cart=false;cartitemname=[];cartitemprice=[];cartitemquantity=[];
   constructor(private http:HttpClient) {
     this.temp=sessionStorage.getItem('resId')
-    this.http.post("http://localhost:6363/user/getcat", {
+    this.http.post(" /user/getcat", {
       id: this.temp
     }).subscribe((res: any) => {
       this.tempcat = res.data;

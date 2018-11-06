@@ -8,7 +8,7 @@ export class LoginrestaurentComponent implements OnInit {
 
   constructor(private http:HttpClient) { }
   login(data){
-    this.http.post("http://localhost:6363/user/restlogin",{
+    this.http.post(" /user/restlogin",{
       email:data.email,
       password:data.password
     }).subscribe((res:any)=>{

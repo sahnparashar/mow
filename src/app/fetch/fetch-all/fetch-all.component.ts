@@ -7,7 +7,7 @@ import { HttpClient } from "@angular/common/http";
 export class FetchAllComponent implements OnInit {
   obj;flag;
   constructor(private http:HttpClient) {
-    this.http.get("http://localhost:6363/user/alldata").subscribe((res:any)=>{
+    this.http.get(" /user/alldata").subscribe((res:any)=>{
       this.obj=res.data
     })
     setTimeout(()=>{

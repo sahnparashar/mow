@@ -13,7 +13,7 @@ export class VerifyComponent implements OnInit {
 
   verify(data){
     
-    this.http.post("http://localhost:6363/user/verify",{
+    this.http.post(" /user/verify",{
       token:data.token
     }).subscribe((res:any)=>{
      

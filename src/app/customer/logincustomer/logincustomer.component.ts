@@ -31,7 +31,7 @@ export class LogincustomerComponent implements OnInit {
   
   login(data){
     
-    this.http.post("http://localhost:6363/user/login",{
+    this.http.post(" /user/login",{
       email:data.email,
       password:data.password
     }).subscribe((res:any)=>{
